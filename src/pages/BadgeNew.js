@@ -30,8 +30,12 @@ class BadgeNew extends React.Component{
         return(
             <div>
                 <NavBar />
-                <div className="BadgeNew__hero">
-                    <img className="img-fluid" src={header} alt="Logo"/>
+                <div className="Badges">
+                    <div className="Badges__hero">
+                        <div className="Badges__container">
+                            <img className="Badges__conf-logo" src={header} alt="ConfLogo"/>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="container">
