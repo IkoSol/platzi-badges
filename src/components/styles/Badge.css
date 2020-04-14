@@ -47,3 +47,63 @@
     font-weight: bold;
     font-style: italic;
   }
+  .Badges__item-container {
+    width: 90%;
+    height: 90px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+    background-color: white;
+    border-bottom-width: 1;
+    border-radius: 1%;
+    border: 0%;
+    max-width: 580px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+ 
+  .Badges__item-avatar {
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .Badges__item-name-text{
+    height: 20px;
+    font-weight: bold;
+  }
+
+  .Badges__item-twitter-text{
+    height: 15px;
+    color: #00ACEE;
+    margin-left: 3px;
+  }
+
+  .Badges__item-jobTitle-text{
+    height: 1px;
+  }
+
+  .Badges__item-twitter-icon{
+    height: 15px;
+    width: 15px;
+  }
+
+  .colorRed{
+    background-color: red;
+    width: 50%;
+    height: 100%;
+  }
+
+  .colorBlue{
+    background-color: blue;
+    width: 50%;
+    height: 100%;
+  }
+
+  .margin-top{
+    margin-top: 10px;
+  }
+
+  .margin-left{
+    margin-left: 15px;
+  }
