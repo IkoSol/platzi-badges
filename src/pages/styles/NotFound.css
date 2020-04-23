@@ -1,0 +1,33 @@
+.background{
+    background: url('../../images/stars.svg'), #1B1B25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 auto;
+    height: 94vh;
+}
+
+.description{
+    padding-right: 50px;
+    text-align: center;
+}
+
+.title-error{
+    margin: 0;
+    color: white;
+    font-family: Impact;
+    font-size: 3em;    
+}
+
+.title-description{
+    color: white;
+    font-weight: 100;
+    font-family: Impact;
+    font-size: 4em; 
+    margin-bottom: 2rem;  
+}
+
+.Home__buttons {
+    margin-top: 10px;
+    margin-left: 40px;
+}

@@ -1,0 +1,71 @@
+.Home__hero{
+    width: 100%;
+    padding: 2rem 0;
+    background: url('../../images/stars.svg'), #1B1B25;
+    background-repeat: repeat;
+    margin-bottom: 1rem;
+}
+
+.Home__hero>.Home__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.Home__Background{
+    width: 100vw;
+    height: 94vh;
+    background: url('../../images/stars.svg'), #1B1B25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home__container{
+    display: flex;
+    width: 800px;
+  }
+
+.Home__description{
+    width: 250px;
+    margin: 0;
+    margin-top: 65px;
+}
+
+.Home__containerConfLogo{
+    width: 300px;
+  }
+  
+.Home__conf-logo {
+    width: 200px;
+    height: 140px;
+  }
+
+.Home__astroContainer{
+    width: 500px;
+}
+
+.Home__astro-logo{
+    width: 500px;
+    height: 380px;
+  }
+  
+  
+.text{
+    color: white;
+    font-size: 12px;
+    line-height: 14px;
+    word-spacing: 2px;
+}
+
+.title-text-style{
+    color: white;
+    font-weight: 100;
+    font-family: Impact;
+    font-size: 24px;    
+}
+
+.Home__buttons {
+    margin-top: 10px;
+    margin-left: 40px;
+    }
