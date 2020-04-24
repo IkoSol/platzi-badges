@@ -5,7 +5,7 @@ function Gravatar(props){
     const hash = md5(email)
 
     return(
-        <img className={props.className} getAvatarUrl={props.getAvatarUrl} src={`https://www.gravatar.com/avatar/${hash}?d=identicon`} alt={props.alt}/>
+        <img className={props.className} src={`https://www.gravatar.com/avatar/${hash}?d=identicon`} alt={props.alt}/>
     )
 }
 
