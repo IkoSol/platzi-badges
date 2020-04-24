@@ -1,9 +1,10 @@
 import React from 'react'
 
 import './styles/BadgeNew.css'
-import header from '../images/badge-header.svg'
+import header from '../images/platziconf-logo.svg'
 import BadgeForm from '../components/BadgeForm'
 import Badge from '../components/Badge'
+import api from '../api'
 
 class BadgeNew extends React.Component{
     state = {
@@ -25,31 +26,53 @@ class BadgeNew extends React.Component{
         })
     }
 
+    handleSubmit = async e => {
+        e.preventDefault()
+        this.setState({
+            loading: true, error:  null
+         })
+
+        try{
+            await api.badges.create(this.state.form)
+            this.setState({
+                loading: false
+             }) 
+        } catch (error){
+            this.setState({
+                loading: false, error: error
+            })
+        }
+    }
+
     render(){
+        console.log('AVATAR URL: ', this.state.form.avatarUrl)
         return(
             <React.Fragment>
-                <div className="Badges">
-                    <div className="Badges__hero">
-                        <div className="Badges__container">
-                            <img className="Badges__conf-logo" src={header} alt="ConfLogo"/>
-                        </div>
-                    </div>
+                
+                <div className="BadgeNew__hero">
+                    <img className="BadgeNew__hero-img img-fluid" src={header} alt="ConfLogo"/>
                 </div>
+                
 
                 <div className="container">
                     <div className="row">
                         <div className="col-6">
                             <Badge 
-                            firstName={this.state.form.firstName}
-                            lastName={this.state.form.lastName}
-                            twitter={this.state.form.twitter}
-                            jobTitle={this.state.form.jobTitle}
-                            email={this.state.form.email}
-                            avatarUrl="https://s.gravatar.com/avatar/95db14a1a5d12817cd654ad1b438be60?s=80"/>
+                                firstName={this.state.form.firstName || 'FIRST_NAME'}
+                                lastName={this.state.form.lastName || 'LAST_NAME'}
+                                twitter={this.state.form.twitter || 'Twitter'}
+                                jobTitle={this.state.form.jobTitle || 'JOB_TITLE'}
+                                email={this.state.form.email || 'EMAIL'}
+                                avatarUrl={this.state.form.avatarUrl}
+                            />
                         </div>
 
                         <div className="col-6">
-                            <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
+                            <BadgeForm 
+                                onChange={this.handleChange} 
+                                onSubmit={this.handleSubmit}
+                                formValues={this.state.form}
+                            />
                         </div>
                     </div>
                 </div>
