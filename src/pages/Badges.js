@@ -4,6 +4,7 @@ import './styles/Badges.css'
 import BadgesList from '../components/BadgesList'
 import confLogo from '../images/badge-header.svg'
 import PageLoading from '../components/PageLoading'
+import MiniLoader from '../components/MiniLoader'
 import PageError from '../components/PageError'
 import { Link } from 'react-router-dom'
 
@@ -19,11 +20,12 @@ class Badges extends React.Component {
 
     componentDidMount(){
         this.fetchData()
+        this.intervalId = setInterval(this.fetchData, 5000) //Polling para que cada 5 segundos recupere datos
     }
 
     //PAra llamar una API hay que hacer:
     fetchData = async () =>{
-        this.setState({loading: true, error: null}) //1.Declarar estado
+        this.setState({loading: true, error: null}) // 1.Declarar estado
 
         try{ //2. Comenzar la llamada a la API
             const data = await api.badges.list()
@@ -33,9 +35,13 @@ class Badges extends React.Component {
         }
     }
 
+    componentWillUnmount(){
+        clearInterval(this.intervalId)
+    }
+
     render(){
         // console.log("2. Render");
-        if(this.state.loading === true){
+        if(this.state.loading === true && !this.state.data){
             return <PageLoading />
         }
 
@@ -63,6 +69,7 @@ class Badges extends React.Component {
                     <div className="Badges__list">
                         <div className="Badges__container">
                             <BadgesList badges={this.state.data}/>
+                            {this.state.loading && <MiniLoader />}
                         </div>
                     </div>
                 </div>
