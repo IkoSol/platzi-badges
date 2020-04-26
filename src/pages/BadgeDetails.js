@@ -8,7 +8,20 @@ import DeleteBadgeModal from '../components/DeleteBadge'
 
 /* CUANDO EL COMPONENTE NO PRESENTA CAMBIOS EN EL ESTADO Y SOLO MUESTRA INFORMACION, 
     PUEDE SER SOLO UNA 'FUNCTION' EN VEZ DE CLASS */
+
+function useIncreaseCount(max){
+    const [count, setCount] = React.useState(0)
+
+    if (count > max){
+        setCount(0)
+    }
+
+    return [count, setCount]
+}
+
 function BadgeDetails(props){
+    const [count, setCount] = useIncreaseCount(4) //Uso de Hook, regresa dos argumentos (como state y setState, uno da el nombre que quiere), nos regresa un arreglo. Se inicializa en 0
+
     const badge = props.badge
 
     return(
@@ -40,6 +53,11 @@ function BadgeDetails(props){
                     <div className="col">
                         <h2>Actions</h2>
                         <div>
+                            <button onClick={()=>{
+                                setCount(count + 1)
+                            }} className="btn btn-primary mr-4">
+                                Increase Count: {count}
+                            </button>
                             <Link className="btn btn-primary mb-4" to={`/badges/${badge.id}/edit`}>Edit</Link>
                         </div>
                         <div>
