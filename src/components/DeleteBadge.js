@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Modal from './Modal'
+import './styles/DeleteBadgeModal.css'
 
 function DeleteBadgeModal(props){
     return <Modal isOpen={props.isOpen} onClose={props.onClose} >

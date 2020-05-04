@@ -1,6 +1,12 @@
+.BadgesList ul{
+  overflow-y: auto;
+  height: 50vh;
+}
+
 .BadgesList ul>li {
     margin-bottom: 1rem;
   }
+
   
   .BadgesListItem {
     background: #FFFFFF;
