@@ -24,7 +24,7 @@ class BadgeNew extends React.Component{
     handleChange = e => {
         this.setState({
             form: {               
-                ... this.state.form,
+                ... this.state.form, //Operador de propagacion
                 [e.target.name]: e.target.value,
             },
         })
